@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>发布订阅模式 | HEROES NEVER DIE</title>
+    <meta name="description" content="Life is what you make it">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.1ab602e8.css" as="style"><link rel="preload" href="/assets/js/app.d8b9440e.js" as="script"><link rel="preload" href="/assets/js/3.7525ef15.js" as="script"><link rel="preload" href="/assets/js/1.04d39d01.js" as="script"><link rel="preload" href="/assets/js/52.2ef05ac4.js" as="script"><link rel="prefetch" href="/assets/js/10.d35f88d7.js"><link rel="prefetch" href="/assets/js/11.033b02bc.js"><link rel="prefetch" href="/assets/js/12.77168713.js"><link rel="prefetch" href="/assets/js/13.f67bf4c4.js"><link rel="prefetch" href="/assets/js/14.79b962f7.js"><link rel="prefetch" href="/assets/js/15.d31d99e4.js"><link rel="prefetch" href="/assets/js/16.38887749.js"><link rel="prefetch" href="/assets/js/17.fdf78c50.js"><link rel="prefetch" href="/assets/js/18.4578d7aa.js"><link rel="prefetch" href="/assets/js/19.8eef112a.js"><link rel="prefetch" href="/assets/js/20.6a4a8604.js"><link rel="prefetch" href="/assets/js/21.d22d6705.js"><link rel="prefetch" href="/assets/js/22.079d05ca.js"><link rel="prefetch" href="/assets/js/23.dce9f8d1.js"><link rel="prefetch" href="/assets/js/24.01b7ac77.js"><link rel="prefetch" href="/assets/js/25.f3b8b8fe.js"><link rel="prefetch" href="/assets/js/26.d40ab5eb.js"><link rel="prefetch" href="/assets/js/27.449279ce.js"><link rel="prefetch" href="/assets/js/28.cd571a3a.js"><link rel="prefetch" href="/assets/js/29.ba774076.js"><link rel="prefetch" href="/assets/js/30.0ca6007e.js"><link rel="prefetch" href="/assets/js/31.f56e6837.js"><link rel="prefetch" href="/assets/js/32.ea96bc9d.js"><link rel="prefetch" href="/assets/js/33.615a0c71.js"><link rel="prefetch" href="/assets/js/34.80c2571c.js"><link rel="prefetch" href="/assets/js/35.94c01fdb.js"><link rel="prefetch" href="/assets/js/36.88b4cbd9.js"><link rel="prefetch" href="/assets/js/37.421c38a9.js"><link rel="prefetch" href="/assets/js/38.3be185e9.js"><link rel="prefetch" href="/assets/js/39.c05e9850.js"><link rel="prefetch" href="/assets/js/4.3967b739.js"><link rel="prefetch" href="/assets/js/40.d8af6919.js"><link rel="prefetch" href="/assets/js/41.1bcfe568.js"><link rel="prefetch" href="/assets/js/42.9a7d79b8.js"><link rel="prefetch" href="/assets/js/43.5dc7378e.js"><link rel="prefetch" href="/assets/js/44.ee30df8e.js"><link rel="prefetch" href="/assets/js/45.e6607493.js"><link rel="prefetch" href="/assets/js/46.c7f21282.js"><link rel="prefetch" href="/assets/js/47.f8213fbd.js"><link rel="prefetch" href="/assets/js/48.b8ccdb51.js"><link rel="prefetch" href="/assets/js/49.6b8ae4ef.js"><link rel="prefetch" href="/assets/js/5.ef5d5249.js"><link rel="prefetch" href="/assets/js/50.73379d01.js"><link rel="prefetch" href="/assets/js/51.0ad56e7f.js"><link rel="prefetch" href="/assets/js/53.873a5c0e.js"><link rel="prefetch" href="/assets/js/54.ea547f42.js"><link rel="prefetch" href="/assets/js/55.00381706.js"><link rel="prefetch" href="/assets/js/56.f63ca0f5.js"><link rel="prefetch" href="/assets/js/57.d5fb4419.js"><link rel="prefetch" href="/assets/js/58.19e42ce4.js"><link rel="prefetch" href="/assets/js/59.f7669aba.js"><link rel="prefetch" href="/assets/js/6.e0fb693f.js"><link rel="prefetch" href="/assets/js/60.b71b61a2.js"><link rel="prefetch" href="/assets/js/61.cccc371b.js"><link rel="prefetch" href="/assets/js/62.60f9e93a.js"><link rel="prefetch" href="/assets/js/63.aefe2cf8.js"><link rel="prefetch" href="/assets/js/64.36284f6f.js"><link rel="prefetch" href="/assets/js/65.a8b2ad72.js"><link rel="prefetch" href="/assets/js/66.9c855436.js"><link rel="prefetch" href="/assets/js/67.bfd383d6.js"><link rel="prefetch" href="/assets/js/68.74565182.js"><link rel="prefetch" href="/assets/js/69.888ae5ac.js"><link rel="prefetch" href="/assets/js/7.3bfae770.js"><link rel="prefetch" href="/assets/js/70.4c8ec57b.js"><link rel="prefetch" href="/assets/js/71.1a985a4a.js"><link rel="prefetch" href="/assets/js/72.bbe31a51.js"><link rel="prefetch" href="/assets/js/73.9f88dc21.js"><link rel="prefetch" href="/assets/js/74.0bfc4159.js"><link rel="prefetch" href="/assets/js/75.1ab8db7e.js"><link rel="prefetch" href="/assets/js/76.6c26af06.js"><link rel="prefetch" href="/assets/js/8.4e7344e9.js"><link rel="prefetch" href="/assets/js/9.91819e6d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1ab602e8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-4b73742e data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-4b73742e><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>HEROES NEVER DIE</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>辽北地区著名狠人</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><div><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div></div> <a href="/" class="home-link router-link-active"><img src="https://resource.limeili.co/logo.png" alt="HEROES NEVER DIE" class="logo"> <span class="site-name">HEROES NEVER DIE</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yirenzu-heifuwang"></use></svg> 
+    Home
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-fuchouzhelianmeng-heiguafu"></use></svg>
+        FrontEnd
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-css"></use></svg> 
+    CSS
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/VUE/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-vue"></use></svg> 
+    VUE
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/Browser/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-gugeliulanqi"></use></svg> 
+    Browser
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-socialjavascript"></use></svg> 
+    JavaScript
+  </a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-pilihuo"></use></svg> 
+    Tag
+  </a></div><div class="nav-item"><a href="/views/notes/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-yinxingnvxia"></use></svg> 
+    Notes
+  </a></div><div class="nav-item"><a href="/views/daily/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-feihongnvwu"></use></svg> 
+    Daily
+  </a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yinhehuweidui-gelute"></use></svg> 
+    TimeLine
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-qiyiboshi"></use></svg>
+        Link
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/javascript/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-github"></use></svg> 
+    GitHub
+  </a></li><li class="dropdown-item"><!----> <a href="/views/javascript/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-weixin"></use></svg> 
+    WeChat
+  </a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="https://resource.limeili.co/avatar.png" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    辽北地区著名狠人
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>55</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>67</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yirenzu-heifuwang"></use></svg> 
+    Home
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-fuchouzhelianmeng-heiguafu"></use></svg>
+        FrontEnd
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-css"></use></svg> 
+    CSS
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/VUE/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-vue"></use></svg> 
+    VUE
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/Browser/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-gugeliulanqi"></use></svg> 
+    Browser
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-socialjavascript"></use></svg> 
+    JavaScript
+  </a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-pilihuo"></use></svg> 
+    Tag
+  </a></div><div class="nav-item"><a href="/views/notes/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-yinxingnvxia"></use></svg> 
+    Notes
+  </a></div><div class="nav-item"><a href="/views/daily/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-feihongnvwu"></use></svg> 
+    Daily
+  </a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yinhehuweidui-gelute"></use></svg> 
+    TimeLine
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-qiyiboshi"></use></svg>
+        Link
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/javascript/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-github"></use></svg> 
+    GitHub
+  </a></li><li class="dropdown-item"><!----> <a href="/views/javascript/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-weixin"></use></svg> 
+    WeChat
+  </a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>发布订阅模式</span> <!----></p> <!----></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>发布订阅模式</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>辽北地区著名狠人</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>发布订阅模式</h1> <hr> <div data-v-0ad1ce1a><i class="iconfont icon-zhengfuzhekang" style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-rili" data-v-0ad1ce1a></use></svg> <span data-v-0ad1ce1a>2020-05-31</span></i> <i class="iconfont " style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-yanjing" data-v-0ad1ce1a></use></svg> <span id="/views/javascript/%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-0ad1ce1a><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont  tags" style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-biaoqian" data-v-0ad1ce1a></use></svg> <span class="tag-item" data-v-0ad1ce1a>
+        发布订阅
+      </span></i> <i class="iconfont  tags" style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-fenlei4" data-v-0ad1ce1a></use></svg> <span class="tag-item" data-v-0ad1ce1a>
+        JavaScript
+      </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p><img src="https://resource.limeili.co/abstract/abstract%20(34).jpg" alt=""></p> <p>设计模式：更好的管理项目中的代码，方便维护，方便团队协作，方便扩展...</p> <p><code>发布订阅：灵感来源于DOM2事件池机制</code></p> <p><code>事件池：</code>我们可以向事件池中追加方法（追加多个不同的方法），当后期事件触发的时候，按照顺序会把这些方法依次执行（也可以从事件池中移除方法）</p> <p>=&gt;addEventListener</p> <p>=&gt;removeEventListener</p> <p>模拟一个事件池：我们自己可以把要执行的方法，依次加入到池子中 on（也可以从池子中移除 off），当某个条件到达的时候，我们通知池子中的方法依次执行 emit...</p> <p>vue：$emit / $on<br>
+redux：subscribe</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ie=edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>width=device-width, user-scalable=no, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+	<span class="token comment">&lt;!-- IMPORT CSS --&gt;</span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+		<span class="token selector">*</span> <span class="token punctuation">{</span>
+			<span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+			<span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token selector">.box</span> <span class="token punctuation">{</span>
+			<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+			<span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+			<span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+			<span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+			<span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+			<span class="token property">background</span><span class="token punctuation">:</span> lightblue<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token comment">&lt;!-- IMPORT JS --&gt;</span>
+	<span class="token comment">&lt;!-- &lt;script src=&quot;js/fastclick.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;js/zepto.min.js&quot;&gt;&lt;/script&gt; --&gt;</span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+		<span class="token comment">/*
+		 * 在移动端，使用click事件存在300MS延迟
+		 *   原因：PC端的click事件是点击（不是单击），dblclick是双击 ；在移动端，浏览器把click事件行为定义为单击（不是点击），也就是间隔一定时间内（300MS）如果只触发一次点击，则为单击，否则则为双击
+		 *   
+		 * fastclick.js主要用来解决移动端click事件行为的300MS延迟的
+		 *   原理：基于事件委托，把指定容器中的click行为统一替换为touch行为，从而去解决300MS延迟的问题
+		 *   使用：FastClick.attach(document.body)
+		 *  
+		 * zepto.js 移动端专用的类库（类似于JQ类库：JQ怎么用，zepto就怎么用，如果使用中报错了，说明zepto没有支持这种写法）
+		 *    1.简化版的JQ，没有处理浏览器兼容，只实现了JQ中最常用的一些方法，所以体积上比JQ小很多
+		 *    2.zepto更懂移动端开发
+		 *      + zepto中的动画或者样式处理是支持CSS3样式和动画的处理的，而JQ在这方面的支持是很弱的 $xxx.css()  $xxx.animate()
+		 *      + JQ中的事件还是以PC事件体制为主，对于移动端的touch/gesture事件没有做进一步的封装处理，而zepto中单独封装了一些关于移动端操作的相关事件行为方法  $xxx.tap/singleTap/doubleTap/longTap/swipe/swipeLeft.../pinchIn/pinchOut...
+		 * 
+		 * hammerjs 国际通用的手势事件库
+		 */</span>
+	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+		<span class="token comment">/*
+		 * 移动端单手指操作事件模型 touch
+		 *   touchstart 手指按下
+		 *   touchmove 手指移动
+		 *   touchend 手指松开
+		 *   touchcancel 因意外原因导致操作中断
+		 * TouchEvent
+		 * 	 ev.changedTouches / ev.touches 都是记录手指操作的相关信息，是一个集合，ev.changedTouches[0]记录第一根手指操作的信息
+		 *   touches在touchend事件中是无法获取的，因为它要求手指必须在屏幕上才可以获取到对应的内容，而changedTouches记录的是手指改变的信息，在三个事件行为中皆可以获取到
+		 */</span>
+		box<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">let</span> point <span class="token operator">=</span> ev<span class="token punctuation">.</span>changedTouches<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>startX <span class="token operator">=</span> point<span class="token punctuation">.</span>clientX<span class="token punctuation">;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>startY <span class="token operator">=</span> point<span class="token punctuation">.</span>clientY<span class="token punctuation">;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>startL <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>offsetLeft<span class="token punctuation">;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>startT <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>offsetTop<span class="token punctuation">;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>isMove <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		box<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchmove'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">let</span> point <span class="token operator">=</span> ev<span class="token punctuation">.</span>changedTouches<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+			<span class="token comment">// 计算手指滑动的偏移差（我们会给予用户一定的操作误差，一般是10px或者30px的滑动内，都不认为是滑动操作）</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>changeX <span class="token operator">=</span> point<span class="token punctuation">.</span>clientX <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>startX<span class="token punctuation">;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>changeY <span class="token operator">=</span> point<span class="token punctuation">.</span>clientY <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>startY<span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>changeX<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">10</span> <span class="token operator">||</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>changeY<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>isMove <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+				<span class="token comment">// 控制盒子跟着移动</span>
+				<span class="token keyword">let</span> curL <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>changeX <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>startL<span class="token punctuation">,</span>
+					curT <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>changeY <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>startT<span class="token punctuation">;</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>cssText <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">left:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>curL<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px;top:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>curT<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		box<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchend'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">let</span> point <span class="token operator">=</span> ev<span class="token punctuation">.</span>changedTouches<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>isMove<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'当前操作为点击操作！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">return</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>changeX<span class="token punctuation">)</span> <span class="token operator">&gt;=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>changeY<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>changeX <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+					console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'当前操作为滑动操作：左'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+					console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'当前操作为滑动操作：右'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+				<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>changeY <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+					console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'当前操作为滑动操作：上'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+					console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'当前操作为滑动操作：下'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">// 长按的区分时间：750MS</span>
+	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">6/5/2020, 12:34:38 AM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><div class="valine-wrapper"><div id="valine"></div></div></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div></div></div>
+    <script src="/assets/js/app.d8b9440e.js" defer></script><script src="/assets/js/3.7525ef15.js" defer></script><script src="/assets/js/1.04d39d01.js" defer></script><script src="/assets/js/52.2ef05ac4.js" defer></script>
+  </body>
+</html>

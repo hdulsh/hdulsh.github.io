@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Virtual DOM VNode | HEROES NEVER DIE</title>
+    <meta name="description" content="Life is what you make it">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.1ab602e8.css" as="style"><link rel="preload" href="/assets/js/app.d8b9440e.js" as="script"><link rel="preload" href="/assets/js/3.7525ef15.js" as="script"><link rel="preload" href="/assets/js/1.04d39d01.js" as="script"><link rel="preload" href="/assets/js/67.bfd383d6.js" as="script"><link rel="prefetch" href="/assets/js/10.d35f88d7.js"><link rel="prefetch" href="/assets/js/11.033b02bc.js"><link rel="prefetch" href="/assets/js/12.77168713.js"><link rel="prefetch" href="/assets/js/13.f67bf4c4.js"><link rel="prefetch" href="/assets/js/14.79b962f7.js"><link rel="prefetch" href="/assets/js/15.d31d99e4.js"><link rel="prefetch" href="/assets/js/16.38887749.js"><link rel="prefetch" href="/assets/js/17.fdf78c50.js"><link rel="prefetch" href="/assets/js/18.4578d7aa.js"><link rel="prefetch" href="/assets/js/19.8eef112a.js"><link rel="prefetch" href="/assets/js/20.6a4a8604.js"><link rel="prefetch" href="/assets/js/21.d22d6705.js"><link rel="prefetch" href="/assets/js/22.079d05ca.js"><link rel="prefetch" href="/assets/js/23.dce9f8d1.js"><link rel="prefetch" href="/assets/js/24.01b7ac77.js"><link rel="prefetch" href="/assets/js/25.f3b8b8fe.js"><link rel="prefetch" href="/assets/js/26.d40ab5eb.js"><link rel="prefetch" href="/assets/js/27.449279ce.js"><link rel="prefetch" href="/assets/js/28.cd571a3a.js"><link rel="prefetch" href="/assets/js/29.ba774076.js"><link rel="prefetch" href="/assets/js/30.0ca6007e.js"><link rel="prefetch" href="/assets/js/31.f56e6837.js"><link rel="prefetch" href="/assets/js/32.ea96bc9d.js"><link rel="prefetch" href="/assets/js/33.615a0c71.js"><link rel="prefetch" href="/assets/js/34.80c2571c.js"><link rel="prefetch" href="/assets/js/35.94c01fdb.js"><link rel="prefetch" href="/assets/js/36.88b4cbd9.js"><link rel="prefetch" href="/assets/js/37.421c38a9.js"><link rel="prefetch" href="/assets/js/38.3be185e9.js"><link rel="prefetch" href="/assets/js/39.c05e9850.js"><link rel="prefetch" href="/assets/js/4.3967b739.js"><link rel="prefetch" href="/assets/js/40.d8af6919.js"><link rel="prefetch" href="/assets/js/41.1bcfe568.js"><link rel="prefetch" href="/assets/js/42.9a7d79b8.js"><link rel="prefetch" href="/assets/js/43.5dc7378e.js"><link rel="prefetch" href="/assets/js/44.ee30df8e.js"><link rel="prefetch" href="/assets/js/45.e6607493.js"><link rel="prefetch" href="/assets/js/46.c7f21282.js"><link rel="prefetch" href="/assets/js/47.f8213fbd.js"><link rel="prefetch" href="/assets/js/48.b8ccdb51.js"><link rel="prefetch" href="/assets/js/49.6b8ae4ef.js"><link rel="prefetch" href="/assets/js/5.ef5d5249.js"><link rel="prefetch" href="/assets/js/50.73379d01.js"><link rel="prefetch" href="/assets/js/51.0ad56e7f.js"><link rel="prefetch" href="/assets/js/52.2ef05ac4.js"><link rel="prefetch" href="/assets/js/53.873a5c0e.js"><link rel="prefetch" href="/assets/js/54.ea547f42.js"><link rel="prefetch" href="/assets/js/55.00381706.js"><link rel="prefetch" href="/assets/js/56.f63ca0f5.js"><link rel="prefetch" href="/assets/js/57.d5fb4419.js"><link rel="prefetch" href="/assets/js/58.19e42ce4.js"><link rel="prefetch" href="/assets/js/59.f7669aba.js"><link rel="prefetch" href="/assets/js/6.e0fb693f.js"><link rel="prefetch" href="/assets/js/60.b71b61a2.js"><link rel="prefetch" href="/assets/js/61.cccc371b.js"><link rel="prefetch" href="/assets/js/62.60f9e93a.js"><link rel="prefetch" href="/assets/js/63.aefe2cf8.js"><link rel="prefetch" href="/assets/js/64.36284f6f.js"><link rel="prefetch" href="/assets/js/65.a8b2ad72.js"><link rel="prefetch" href="/assets/js/66.9c855436.js"><link rel="prefetch" href="/assets/js/68.74565182.js"><link rel="prefetch" href="/assets/js/69.888ae5ac.js"><link rel="prefetch" href="/assets/js/7.3bfae770.js"><link rel="prefetch" href="/assets/js/70.4c8ec57b.js"><link rel="prefetch" href="/assets/js/71.1a985a4a.js"><link rel="prefetch" href="/assets/js/72.bbe31a51.js"><link rel="prefetch" href="/assets/js/73.9f88dc21.js"><link rel="prefetch" href="/assets/js/74.0bfc4159.js"><link rel="prefetch" href="/assets/js/75.1ab8db7e.js"><link rel="prefetch" href="/assets/js/76.6c26af06.js"><link rel="prefetch" href="/assets/js/8.4e7344e9.js"><link rel="prefetch" href="/assets/js/9.91819e6d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1ab602e8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-4b73742e data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-4b73742e><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>HEROES NEVER DIE</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>辽北地区著名狠人</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><div><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div></div> <a href="/" class="home-link router-link-active"><img src="https://resource.limeili.co/logo.png" alt="HEROES NEVER DIE" class="logo"> <span class="site-name">HEROES NEVER DIE</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yirenzu-heifuwang"></use></svg> 
+    Home
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-fuchouzhelianmeng-heiguafu"></use></svg>
+        FrontEnd
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-css"></use></svg> 
+    CSS
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/VUE/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-vue"></use></svg> 
+    VUE
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/Browser/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-gugeliulanqi"></use></svg> 
+    Browser
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-socialjavascript"></use></svg> 
+    JavaScript
+  </a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-pilihuo"></use></svg> 
+    Tag
+  </a></div><div class="nav-item"><a href="/views/notes/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-yinxingnvxia"></use></svg> 
+    Notes
+  </a></div><div class="nav-item"><a href="/views/daily/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-feihongnvwu"></use></svg> 
+    Daily
+  </a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yinhehuweidui-gelute"></use></svg> 
+    TimeLine
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-qiyiboshi"></use></svg>
+        Link
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/vue/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-github"></use></svg> 
+    GitHub
+  </a></li><li class="dropdown-item"><!----> <a href="/views/vue/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-weixin"></use></svg> 
+    WeChat
+  </a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="https://resource.limeili.co/avatar.png" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    辽北地区著名狠人
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>55</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>67</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yirenzu-heifuwang"></use></svg> 
+    Home
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-fuchouzhelianmeng-heiguafu"></use></svg>
+        FrontEnd
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-css"></use></svg> 
+    CSS
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/VUE/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-vue"></use></svg> 
+    VUE
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/Browser/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-gugeliulanqi"></use></svg> 
+    Browser
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-socialjavascript"></use></svg> 
+    JavaScript
+  </a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-pilihuo"></use></svg> 
+    Tag
+  </a></div><div class="nav-item"><a href="/views/notes/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-yinxingnvxia"></use></svg> 
+    Notes
+  </a></div><div class="nav-item"><a href="/views/daily/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-feihongnvwu"></use></svg> 
+    Daily
+  </a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yinhehuweidui-gelute"></use></svg> 
+    TimeLine
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-qiyiboshi"></use></svg>
+        Link
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/vue/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-github"></use></svg> 
+    GitHub
+  </a></li><li class="dropdown-item"><!----> <a href="/views/vue/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-weixin"></use></svg> 
+    WeChat
+  </a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Virtual DOM VNode</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/vue/Virtual%20DOM%20VNode.html#什么是vnode" class="sidebar-link">什么是VNode</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/vue/Virtual%20DOM%20VNode.html#实现一个vnode" class="sidebar-link">实现一个VNode</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/vue/Virtual%20DOM%20VNode.html#源码创建vnode过程" class="sidebar-link">源码创建VNode过程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/vue/Virtual%20DOM%20VNode.html#初始化vue" class="sidebar-link">初始化vue</a></li><li class="sidebar-sub-header"><a href="/views/vue/Virtual%20DOM%20VNode.html#vue实例挂载" class="sidebar-link">Vue实例挂载</a></li><li class="sidebar-sub-header"><a href="/views/vue/Virtual%20DOM%20VNode.html#创建虚拟node" class="sidebar-link">创建虚拟Node</a></li><li class="sidebar-sub-header"><a href="/views/vue/Virtual%20DOM%20VNode.html#实例查看" class="sidebar-link">实例查看</a></li></ul></li><li><a href="/views/vue/Virtual%20DOM%20VNode.html#更新视图" class="sidebar-link">更新视图</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>Virtual DOM VNode</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>辽北地区著名狠人</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>Virtual DOM VNode</h1> <hr> <div data-v-0ad1ce1a><i class="iconfont icon-zhengfuzhekang" style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-rili" data-v-0ad1ce1a></use></svg> <span data-v-0ad1ce1a>2019-08-26</span></i> <i class="iconfont " style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-yanjing" data-v-0ad1ce1a></use></svg> <span id="/views/vue/Virtual%20DOM%20VNode.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-0ad1ce1a><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont  tags" style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-biaoqian" data-v-0ad1ce1a></use></svg> <span class="tag-item" data-v-0ad1ce1a>
+        VUE
+      </span><span class="tag-item" data-v-0ad1ce1a>
+        虚拟DOM
+      </span><span class="tag-item" data-v-0ad1ce1a>
+        VNode
+      </span><span class="tag-item" data-v-0ad1ce1a>
+        Virtual DOM
+      </span></i> <i class="iconfont  tags" style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-fenlei4" data-v-0ad1ce1a></use></svg> <span class="tag-item" data-v-0ad1ce1a>
+        VUE
+      </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p><img src="https://resource.limeili.co/abstract/abstract%20(18).jpg" alt=""></p> <h2 id="什么是vnode"><a href="#什么是vnode" class="header-anchor">#</a> 什么是VNode</h2> <p>我们知道，render function 会被转化成 VNode 节点。Virtual DOM 其实就是一棵以 JavaScript 对象（VNode 节点）作为基础的树，用对象属性来描述节点，实际上它只是一层对真实 DOM 的抽象。最终可以通过一系列操作使这棵树映射到真实环境上。由于 Virtual DOM 是以 JavaScript 对象为基础而不依赖真实平台环境，所以使它具有了跨平台的能力，比如说浏览器平台、Weex、Node 等。</p> <h2 id="实现一个vnode"><a href="#实现一个vnode" class="header-anchor">#</a> 实现一个VNode</h2> <p>VNode 归根结底就是一个 JavaScript 对象，只要这个类的一些属性可以正确直观地描述清楚当前节点的信息即可。我们来实现一个简单的 <code>VNode</code> 类，加入一些基本属性，为了便于理解，我们先不考虑复杂的情况。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">VNode</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token parameter">tag<span class="token punctuation">,</span> data<span class="token punctuation">,</span> children<span class="token punctuation">,</span> text<span class="token punctuation">,</span> elm</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">/*当前节点的标签名*/</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>tag <span class="token operator">=</span> tag<span class="token punctuation">;</span>
+        <span class="token comment">/*当前节点的一些数据信息，比如props、attrs等数据*/</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
+        <span class="token comment">/*当前节点的子节点，是一个数组*/</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>children <span class="token operator">=</span> children<span class="token punctuation">;</span>
+        <span class="token comment">/*当前节点的文本*/</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>text <span class="token operator">=</span> text<span class="token punctuation">;</span>
+        <span class="token comment">/*当前虚拟节点对应的真实dom节点*/</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>elm <span class="token operator">=</span> elm<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>比如我目前有这么一个 Vue 组件。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;demo&quot;</span> v<span class="token operator">-</span>show<span class="token operator">=</span><span class="token string">&quot;isShow&quot;</span><span class="token operator">&gt;</span>
+    This is a span<span class="token punctuation">.</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+</code></pre></div><p>用 JavaScript 代码形式就是这样的。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">render</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">VNode</span><span class="token punctuation">(</span>
+        <span class="token string">'span'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">/* 指令集合数组 */</span>
+            directives<span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token comment">/* v-show指令 */</span>
+                    rawName<span class="token operator">:</span> <span class="token string">'v-show'</span><span class="token punctuation">,</span>
+                    expression<span class="token operator">:</span> <span class="token string">'isShow'</span><span class="token punctuation">,</span>
+                    name<span class="token operator">:</span> <span class="token string">'show'</span><span class="token punctuation">,</span>
+                    value<span class="token operator">:</span> <span class="token boolean">true</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token comment">/* 静态class */</span>
+            staticClass<span class="token operator">:</span> <span class="token string">'demo'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token keyword">new</span> <span class="token class-name">VNode</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token string">'This is a span.'</span><span class="token punctuation">)</span> <span class="token punctuation">]</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>看看转换成 VNode 以后的情况。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    tag<span class="token operator">:</span> <span class="token string">'span'</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">/* 指令集合数组 */</span>
+        directives<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token comment">/* v-show指令 */</span>
+                rawName<span class="token operator">:</span> <span class="token string">'v-show'</span><span class="token punctuation">,</span>
+                expression<span class="token operator">:</span> <span class="token string">'isShow'</span><span class="token punctuation">,</span>
+                name<span class="token operator">:</span> <span class="token string">'show'</span><span class="token punctuation">,</span>
+                value<span class="token operator">:</span> <span class="token boolean">true</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token comment">/* 静态class */</span>
+        staticClass<span class="token operator">:</span> <span class="token string">'demo'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    text<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+    children<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token comment">/* 子节点是一个文本VNode节点 */</span>
+        <span class="token punctuation">{</span>
+            tag<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+            data<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+            text<span class="token operator">:</span> <span class="token string">'This is a span.'</span><span class="token punctuation">,</span>
+            children<span class="token operator">:</span> <span class="token keyword">undefined</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>然后我们可以将 VNode 进一步封装一下，可以实现一些产生常用 VNode 的方法。</p> <ul><li>创建一个空节点</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">createEmptyVNode</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> node <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    node<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> node<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><ul><li>创建一个文本节点</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">createTextVNode</span> <span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">VNode</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token function">String</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><ul><li>克隆一个 VNode 节点</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">cloneVNode</span> <span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> cloneVnode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VNode</span><span class="token punctuation">(</span>
+        node<span class="token punctuation">.</span>tag<span class="token punctuation">,</span>
+        node<span class="token punctuation">.</span>data<span class="token punctuation">,</span>
+        node<span class="token punctuation">.</span>children<span class="token punctuation">,</span>
+        node<span class="token punctuation">.</span>text<span class="token punctuation">,</span>
+        node<span class="token punctuation">.</span>elm
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> cloneVnode<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>总的来说，VNode 就是一个 JavaScript 对象，用 JavaScript 对象的属性来描述当前节点的一些状态，用 VNode 节点的形式来模拟一棵 Virtual DOM 树。</p> <h2 id="源码创建vnode过程"><a href="#源码创建vnode过程" class="header-anchor">#</a> 源码创建VNode过程</h2> <h3 id="初始化vue"><a href="#初始化vue" class="header-anchor">#</a> 初始化vue</h3> <p>我们在实例化一个 vue 实例，也即 new Vue( ) 时，实际上是执行 src/core/instance/index.js  中定义的 Function 函数。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Vue</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span> <span class="token operator">&amp;&amp;</span>
+    <span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token keyword">instanceof</span> <span class="token class-name">Vue</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">warn</span><span class="token punctuation">(</span><span class="token string">'Vue is a constructor and should be called with the `new` keyword'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_init</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>复制代码通过查看 Vue 的 function，我们知道 Vue 只能通过 new 关键字初始化，然后调用 <code>this._init</code>方法，该方法在 src/core/instance/init.js 中定义。</p> <div class="language-js extra-class"><pre class="language-js"><code>  <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">_init</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options<span class="token operator">?</span><span class="token operator">:</span> Object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> vm<span class="token operator">:</span> Component <span class="token operator">=</span> <span class="token keyword">this</span>
+      
+    <span class="token comment">// 省略一系列其它初始化的代码</span>
+      
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'vm.$options.el:'</span><span class="token punctuation">,</span>vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>el<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      vm<span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>el<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><h3 id="vue实例挂载"><a href="#vue实例挂载" class="header-anchor">#</a> Vue实例挂载</h3> <p>Vue 中是通过 $mount 实例方法去挂载 dom 的，下面我们通过分析 compiler 版本的 mount 实现，相关源码在目录 src/platforms/web/entry-runtime-with-compiler.js 文件中定义</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> mount <span class="token operator">=</span> <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$mount
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$mount</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>
+  <span class="token parameter">el<span class="token operator">?</span><span class="token operator">:</span> string <span class="token operator">|</span> Element<span class="token punctuation">,</span>
+  hydrating<span class="token operator">?</span><span class="token operator">:</span> boolean</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Component <span class="token punctuation">{</span>
+  el <span class="token operator">=</span> el <span class="token operator">&amp;&amp;</span> <span class="token function">query</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span>
+  
+   <span class="token comment">// 省略一系列初始化以及逻辑判断代码  </span>
+ 
+  <span class="token keyword">return</span> <span class="token function">mount</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> el<span class="token punctuation">,</span> hydrating<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>我们发现最终还是调用用原先原型上的 $mount 方法挂载 ，原先原型上的 $mount 方法在 src/platforms/web/runtime/index.js 中定义 。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$mount</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>
+  <span class="token parameter">el<span class="token operator">?</span><span class="token operator">:</span> string <span class="token operator">|</span> Element<span class="token punctuation">,</span>
+  hydrating<span class="token operator">?</span><span class="token operator">:</span> boolean</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Component <span class="token punctuation">{</span>
+  el <span class="token operator">=</span> el <span class="token operator">&amp;&amp;</span> inBrowser <span class="token operator">?</span> <span class="token function">query</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">undefined</span>
+  <span class="token keyword">return</span> <span class="token function">mountComponent</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> el<span class="token punctuation">,</span> hydrating<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>我们发现$mount 方法实际上会去调用 mountComponent 方法，这个方法定义在 src/core/instance/lifecycle.js 文件中</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">mountComponent</span> <span class="token punctuation">(</span>
+  <span class="token parameter">vm<span class="token operator">:</span> Component<span class="token punctuation">,</span>
+  el<span class="token operator">:</span> <span class="token operator">?</span>Element<span class="token punctuation">,</span>
+  hydrating<span class="token operator">?</span><span class="token operator">:</span> boolean</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Component <span class="token punctuation">{</span>
+  vm<span class="token punctuation">.</span>$el <span class="token operator">=</span> el
+  <span class="token comment">// 省略一系列其它代码</span>
+  <span class="token keyword">let</span> updateComponent
+  <span class="token comment">/* istanbul ignore if */</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span> <span class="token operator">&amp;&amp;</span> config<span class="token punctuation">.</span>performance <span class="token operator">&amp;&amp;</span> mark<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">updateComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 生成虚拟 vnode   </span>
+      <span class="token keyword">const</span> vnode <span class="token operator">=</span> vm<span class="token punctuation">.</span><span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token comment">// 更新 DOM</span>
+      vm<span class="token punctuation">.</span><span class="token function">_update</span><span class="token punctuation">(</span>vnode<span class="token punctuation">,</span> hydrating<span class="token punctuation">)</span>
+     
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">updateComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      vm<span class="token punctuation">.</span><span class="token function">_update</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span><span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> hydrating<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 实例化一个渲染Watcher，在它的回调函数中会调用 updateComponent 方法  </span>
+  <span class="token keyword">new</span> <span class="token class-name">Watcher</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> updateComponent<span class="token punctuation">,</span> noop<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function">before</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>vm<span class="token punctuation">.</span>_isMounted <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>vm<span class="token punctuation">.</span>_isDestroyed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">callHook</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> <span class="token string">'beforeUpdate'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">true</span> <span class="token comment">/* isRenderWatcher */</span><span class="token punctuation">)</span>
+  hydrating <span class="token operator">=</span> <span class="token boolean">false</span>
+
+  <span class="token keyword">return</span> vm
+<span class="token punctuation">}</span>
+</code></pre></div><p>从上面的代码可以看到，mountComponent 核心就是先实例化一个渲染Watcher，在它的回调函数中会调用 updateComponent 方法，在此方法中调用 <code>vm._render</code> 方法先生成虚拟 Node，最终调用 <code>vm._update</code> 更新 DOM。</p> <h3 id="创建虚拟node"><a href="#创建虚拟node" class="header-anchor">#</a> 创建虚拟Node</h3> <p>Vue 的 <code>_render</code> 方法是实例的一个私有方法，它用来把实例渲染成一个虚拟 Node</p> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">_render</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> VNode <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> vm<span class="token operator">:</span> Component <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> render<span class="token punctuation">,</span> _parentVnode <span class="token punctuation">}</span> <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options
+    <span class="token keyword">let</span> vnode
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 省略一系列代码  </span>
+      currentRenderingInstance <span class="token operator">=</span> vm
+      <span class="token comment">// 调用 createElement 方法来返回 vnode</span>
+      vnode <span class="token operator">=</span> <span class="token function">render</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>_renderProxy<span class="token punctuation">,</span> vm<span class="token punctuation">.</span>$createElement<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">handleError</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> vm<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">render</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// set parent</span>
+    vnode<span class="token punctuation">.</span>parent <span class="token operator">=</span> _parentVnode
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;vnode...:&quot;</span><span class="token punctuation">,</span>vnode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> vnode
+  <span class="token punctuation">}</span>
+
+</code></pre></div><p>Vue.js 利用 <code>_createElement</code> 方法创建 VNode</p> <p><code>_createElement 方法有 5 个参数，context 表示 VNode 的上下文环境，它是 Component 类型；tag表示标签，它可以是一个字符串，也可以是一个 Component；data 表示 VNode 的数据，它是一个 VNodeData 类型，可以在 flow/vnode.js 中找到它的定义；children 表示当前 VNode 的子节点，它是任意类型的，需要被规范为标准的 VNode 数组</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token parameter">tag<span class="token punctuation">,</span>data<span class="token punctuation">,</span><span class="token operator">...</span>children</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+    <span class="token keyword">let</span> key <span class="token operator">=</span> data<span class="token punctuation">.</span>key<span class="token punctuation">;</span> 
+    <span class="token keyword">delete</span> data<span class="token punctuation">.</span>key<span class="token punctuation">;</span> 
+    children <span class="token operator">=</span> children<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">child</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span> 
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> child <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span>
+        <span class="token comment">//如果是对象说明又用了createElement方法</span>
+            <span class="token punctuation">{</span> <span class="token keyword">return</span> child <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+            <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token function">vnode</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span><span class="token keyword">undefined</span><span class="token punctuation">,</span><span class="token keyword">undefined</span><span class="token punctuation">,</span><span class="token keyword">undefined</span><span class="token punctuation">,</span>child<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">vnode</span><span class="token punctuation">(</span>tag<span class="token punctuation">,</span>data<span class="token punctuation">,</span>key<span class="token punctuation">,</span>children<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">vnode</span><span class="token punctuation">(</span><span class="token parameter">tag<span class="token punctuation">,</span>data<span class="token punctuation">,</span>key<span class="token punctuation">,</span>children<span class="token punctuation">,</span>text</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> 
+        tag<span class="token punctuation">,</span> <span class="token comment">// 表示的是当前的标签名 </span>
+        data<span class="token punctuation">,</span> <span class="token comment">// 表示的是当前标签上的属性 </span>
+        key<span class="token punctuation">,</span> <span class="token comment">// 唯一表示用户可能传递 </span>
+        children<span class="token punctuation">,</span> 
+        text <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+<span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>id<span class="token operator">:</span><span class="token string">'container'</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'zzzz'</span><span class="token punctuation">)</span>
+
+tag<span class="token operator">:</span> <span class="token string">&quot;div&quot;</span>
+data<span class="token operator">:</span> <span class="token punctuation">{</span>id<span class="token operator">:</span> <span class="token string">&quot;container&quot;</span><span class="token punctuation">}</span>
+key<span class="token operator">:</span> <span class="token keyword">undefined</span>
+children<span class="token operator">:</span> 
+   <span class="token punctuation">{</span>tag<span class="token operator">:</span> <span class="token string">&quot;p&quot;</span><span class="token punctuation">,</span> data<span class="token operator">:</span> <span class="token punctuation">{</span>…<span class="token punctuation">}</span><span class="token punctuation">,</span> key<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> children<span class="token operator">:</span> <span class="token function">Array</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> text<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">}</span>
+   <span class="token punctuation">{</span>tag<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> data<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> key<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> children<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> text<span class="token operator">:</span> <span class="token string">&quot;zzzz&quot;</span><span class="token punctuation">}</span>
+text<span class="token operator">:</span> <span class="token keyword">undefined</span>
+
+</code></pre></div><h3 id="实例查看"><a href="#实例查看" class="header-anchor">#</a> 实例查看</h3> <div class="language-js extra-class"><pre class="language-js"><code>  <span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">createElement</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        attrs<span class="token operator">:</span> <span class="token punctuation">{</span>
+          id<span class="token operator">:</span> <span class="token string">'app'</span><span class="token punctuation">,</span>
+          <span class="token keyword">class</span><span class="token operator">:</span> <span class="token string">&quot;class_box&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      message<span class="token operator">:</span> <span class="token string">'Hello Vue!'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div><p><img src="https://resource.limeili.co/image/201909060025.png" alt=""></p> <h2 id="更新视图"><a href="#更新视图" class="header-anchor">#</a> 更新视图</h2> <p>👉 <a href="/views/vue/diff及patch机制.html">详情见</a> 👈</p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">6/30/2020, 9:08:03 PM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><div class="valine-wrapper"><div id="valine"></div></div></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div></div></div>
+    <script src="/assets/js/app.d8b9440e.js" defer></script><script src="/assets/js/3.7525ef15.js" defer></script><script src="/assets/js/1.04d39d01.js" defer></script><script src="/assets/js/67.bfd383d6.js" defer></script>
+  </body>
+</html>

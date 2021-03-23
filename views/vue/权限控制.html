@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue权限控制 | HEROES NEVER DIE</title>
+    <meta name="description" content="Life is what you make it">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.1ab602e8.css" as="style"><link rel="preload" href="/assets/js/app.d8b9440e.js" as="script"><link rel="preload" href="/assets/js/3.7525ef15.js" as="script"><link rel="preload" href="/assets/js/1.04d39d01.js" as="script"><link rel="preload" href="/assets/js/72.bbe31a51.js" as="script"><link rel="prefetch" href="/assets/js/10.d35f88d7.js"><link rel="prefetch" href="/assets/js/11.033b02bc.js"><link rel="prefetch" href="/assets/js/12.77168713.js"><link rel="prefetch" href="/assets/js/13.f67bf4c4.js"><link rel="prefetch" href="/assets/js/14.79b962f7.js"><link rel="prefetch" href="/assets/js/15.d31d99e4.js"><link rel="prefetch" href="/assets/js/16.38887749.js"><link rel="prefetch" href="/assets/js/17.fdf78c50.js"><link rel="prefetch" href="/assets/js/18.4578d7aa.js"><link rel="prefetch" href="/assets/js/19.8eef112a.js"><link rel="prefetch" href="/assets/js/20.6a4a8604.js"><link rel="prefetch" href="/assets/js/21.d22d6705.js"><link rel="prefetch" href="/assets/js/22.079d05ca.js"><link rel="prefetch" href="/assets/js/23.dce9f8d1.js"><link rel="prefetch" href="/assets/js/24.01b7ac77.js"><link rel="prefetch" href="/assets/js/25.f3b8b8fe.js"><link rel="prefetch" href="/assets/js/26.d40ab5eb.js"><link rel="prefetch" href="/assets/js/27.449279ce.js"><link rel="prefetch" href="/assets/js/28.cd571a3a.js"><link rel="prefetch" href="/assets/js/29.ba774076.js"><link rel="prefetch" href="/assets/js/30.0ca6007e.js"><link rel="prefetch" href="/assets/js/31.f56e6837.js"><link rel="prefetch" href="/assets/js/32.ea96bc9d.js"><link rel="prefetch" href="/assets/js/33.615a0c71.js"><link rel="prefetch" href="/assets/js/34.80c2571c.js"><link rel="prefetch" href="/assets/js/35.94c01fdb.js"><link rel="prefetch" href="/assets/js/36.88b4cbd9.js"><link rel="prefetch" href="/assets/js/37.421c38a9.js"><link rel="prefetch" href="/assets/js/38.3be185e9.js"><link rel="prefetch" href="/assets/js/39.c05e9850.js"><link rel="prefetch" href="/assets/js/4.3967b739.js"><link rel="prefetch" href="/assets/js/40.d8af6919.js"><link rel="prefetch" href="/assets/js/41.1bcfe568.js"><link rel="prefetch" href="/assets/js/42.9a7d79b8.js"><link rel="prefetch" href="/assets/js/43.5dc7378e.js"><link rel="prefetch" href="/assets/js/44.ee30df8e.js"><link rel="prefetch" href="/assets/js/45.e6607493.js"><link rel="prefetch" href="/assets/js/46.c7f21282.js"><link rel="prefetch" href="/assets/js/47.f8213fbd.js"><link rel="prefetch" href="/assets/js/48.b8ccdb51.js"><link rel="prefetch" href="/assets/js/49.6b8ae4ef.js"><link rel="prefetch" href="/assets/js/5.ef5d5249.js"><link rel="prefetch" href="/assets/js/50.73379d01.js"><link rel="prefetch" href="/assets/js/51.0ad56e7f.js"><link rel="prefetch" href="/assets/js/52.2ef05ac4.js"><link rel="prefetch" href="/assets/js/53.873a5c0e.js"><link rel="prefetch" href="/assets/js/54.ea547f42.js"><link rel="prefetch" href="/assets/js/55.00381706.js"><link rel="prefetch" href="/assets/js/56.f63ca0f5.js"><link rel="prefetch" href="/assets/js/57.d5fb4419.js"><link rel="prefetch" href="/assets/js/58.19e42ce4.js"><link rel="prefetch" href="/assets/js/59.f7669aba.js"><link rel="prefetch" href="/assets/js/6.e0fb693f.js"><link rel="prefetch" href="/assets/js/60.b71b61a2.js"><link rel="prefetch" href="/assets/js/61.cccc371b.js"><link rel="prefetch" href="/assets/js/62.60f9e93a.js"><link rel="prefetch" href="/assets/js/63.aefe2cf8.js"><link rel="prefetch" href="/assets/js/64.36284f6f.js"><link rel="prefetch" href="/assets/js/65.a8b2ad72.js"><link rel="prefetch" href="/assets/js/66.9c855436.js"><link rel="prefetch" href="/assets/js/67.bfd383d6.js"><link rel="prefetch" href="/assets/js/68.74565182.js"><link rel="prefetch" href="/assets/js/69.888ae5ac.js"><link rel="prefetch" href="/assets/js/7.3bfae770.js"><link rel="prefetch" href="/assets/js/70.4c8ec57b.js"><link rel="prefetch" href="/assets/js/71.1a985a4a.js"><link rel="prefetch" href="/assets/js/73.9f88dc21.js"><link rel="prefetch" href="/assets/js/74.0bfc4159.js"><link rel="prefetch" href="/assets/js/75.1ab8db7e.js"><link rel="prefetch" href="/assets/js/76.6c26af06.js"><link rel="prefetch" href="/assets/js/8.4e7344e9.js"><link rel="prefetch" href="/assets/js/9.91819e6d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1ab602e8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-4b73742e data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-4b73742e><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>HEROES NEVER DIE</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>辽北地区著名狠人</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><div><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div></div> <a href="/" class="home-link router-link-active"><img src="https://resource.limeili.co/logo.png" alt="HEROES NEVER DIE" class="logo"> <span class="site-name">HEROES NEVER DIE</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yirenzu-heifuwang"></use></svg> 
+    Home
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-fuchouzhelianmeng-heiguafu"></use></svg>
+        FrontEnd
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-css"></use></svg> 
+    CSS
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/VUE/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-vue"></use></svg> 
+    VUE
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/Browser/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-gugeliulanqi"></use></svg> 
+    Browser
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-socialjavascript"></use></svg> 
+    JavaScript
+  </a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-pilihuo"></use></svg> 
+    Tag
+  </a></div><div class="nav-item"><a href="/views/notes/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-yinxingnvxia"></use></svg> 
+    Notes
+  </a></div><div class="nav-item"><a href="/views/daily/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-feihongnvwu"></use></svg> 
+    Daily
+  </a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yinhehuweidui-gelute"></use></svg> 
+    TimeLine
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-qiyiboshi"></use></svg>
+        Link
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/vue/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-github"></use></svg> 
+    GitHub
+  </a></li><li class="dropdown-item"><!----> <a href="/views/vue/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-weixin"></use></svg> 
+    WeChat
+  </a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="https://resource.limeili.co/avatar.png" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    辽北地区著名狠人
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>55</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>67</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yirenzu-heifuwang"></use></svg> 
+    Home
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-fuchouzhelianmeng-heiguafu"></use></svg>
+        FrontEnd
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-css"></use></svg> 
+    CSS
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/VUE/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-vue"></use></svg> 
+    VUE
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/Browser/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-gugeliulanqi"></use></svg> 
+    Browser
+  </a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-socialjavascript"></use></svg> 
+    JavaScript
+  </a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-pilihuo"></use></svg> 
+    Tag
+  </a></div><div class="nav-item"><a href="/views/notes/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-shenqisixia-yinxingnvxia"></use></svg> 
+    Notes
+  </a></div><div class="nav-item"><a href="/views/daily/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-feihongnvwu"></use></svg> 
+    Daily
+  </a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-yinhehuweidui-gelute"></use></svg> 
+    TimeLine
+  </a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-qiyiboshi"></use></svg>
+        Link
+      </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/vue/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-github"></use></svg> 
+    GitHub
+  </a></li><li class="dropdown-item"><!----> <a href="/views/vue/.html" class="nav-link"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-weixin"></use></svg> 
+    WeChat
+  </a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Vue权限控制</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/vue/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6.html#权限相关概念" class="sidebar-link">权限相关概念</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/vue/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6.html#权限的分类" class="sidebar-link">权限的分类</a></li><li class="sidebar-sub-header"><a href="/views/vue/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6.html#前端权限的意义" class="sidebar-link">前端权限的意义</a></li></ul></li><li><a href="/views/vue/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6.html#前端权限控制思路" class="sidebar-link">前端权限控制思路</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/vue/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6.html#菜单的控制" class="sidebar-link">菜单的控制</a></li><li class="sidebar-sub-header"><a href="/views/vue/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6.html#界面的控制" class="sidebar-link">界面的控制</a></li><li class="sidebar-sub-header"><a href="/views/vue/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6.html#按钮的控制" class="sidebar-link">按钮的控制</a></li><li class="sidebar-sub-header"><a href="/views/vue/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6.html#请求和响应的控制" class="sidebar-link">请求和响应的控制</a></li></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>Vue权限控制</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>辽北地区著名狠人</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>Vue权限控制</h1> <hr> <div data-v-0ad1ce1a><i class="iconfont icon-zhengfuzhekang" style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-rili" data-v-0ad1ce1a></use></svg> <span data-v-0ad1ce1a>2019-10-18</span></i> <i class="iconfont " style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-yanjing" data-v-0ad1ce1a></use></svg> <span id="/views/vue/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-0ad1ce1a><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont  tags" style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-biaoqian" data-v-0ad1ce1a></use></svg> <span class="tag-item" data-v-0ad1ce1a>
+        VUE
+      </span></i> <i class="iconfont  tags" style="display:;" data-v-0ad1ce1a><svg aria-hidden="true" class="icon" data-v-0ad1ce1a><use xlink:href="#icon-fenlei4" data-v-0ad1ce1a></use></svg> <span class="tag-item" data-v-0ad1ce1a>
+        VUE
+      </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p><img src="https://resource.limeili.co/abstract/abstract%20(42).jpg" alt=""></p> <h2 id="权限相关概念"><a href="#权限相关概念" class="header-anchor">#</a> 权限相关概念</h2> <h3 id="权限的分类"><a href="#权限的分类" class="header-anchor">#</a> 权限的分类</h3> <ul><li>后端权限<br>
+从根本上讲前端仅仅只是视图层的展示, 权限的核⼼是在于服务器中的数据变化, 所以后端才是权限
+的关键, 后端权限可以控制某个⽤户是否能够查询数据，修改数据等操作
+<code>后端如何知道该请求是哪个⽤户发过来的</code><br>
+cookie<br>
+session<br>
+token
+<code>后端的权限设计RBAC</code><br>
+用户<br>
+角色<br>
+权限</li> <li>前端权限
+前端权限的控制本质上来说, 就是控制前端的 视图层的展示和前端所发送的请求. 但是只有前端权
+限控制没有后端权限控制是万万不可的. 前端权限控制只可以说是达到锦上添花的效果.</li></ul> <h3 id="前端权限的意义"><a href="#前端权限的意义" class="header-anchor">#</a> 前端权限的意义</h3> <ul><li>降低非法操作作的可能性
+不怕贼偷就怕贼惦记, 在⻚⾯中展示出⼀个 就算点击了也最终会失败 的按钮, 势必会增加有⼼者
+⾮法操作的可能性</li> <li>尽可能排除不必要请求,减轻服务器压⼒
+没必要的请求, 操作失败的请求, 不具备权限的请求, 应该压根就不需要发送, 请求少了, ⾃然也会减
+轻服务器的压⼒</li> <li>提⾼⽤户体验</li></ul> <h2 id="前端权限控制思路"><a href="#前端权限控制思路" class="header-anchor">#</a> 前端权限控制思路</h2> <h3 id="菜单的控制"><a href="#菜单的控制" class="header-anchor">#</a> 菜单的控制</h3> <p>在登录请求中，会得到权限数据，需要后端返回数据的支持，前端根据权限数据展示对应的菜单，点击菜单才能看到相关的界面</p> <div class="language-json extra-class"><pre class="language-json"><code>
+ <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;rid&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;username&quot;</span><span class="token operator">:</span> <span class="token string">&quot;admin&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;mobile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;13999999999&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;123999@qq.com&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;token&quot;</span><span class="token operator">:</span> &quot;Bearer
+  eyJhbGciOiJIUzI<span class="token number">1</span>NiIsInR<span class="token number">5</span>cCI<span class="token number">6</span>IkpXVCJ<span class="token number">9.</span>eyJ<span class="token number">1</span>aWQiOjUwMCwicmlkIjowLCJpYXQiOjE<span class="token number">1</span>M
+  TI<span class="token number">1</span>NDQyOTksImV<span class="token number">4</span>cCI<span class="token number">6</span>MTUxMjYzMDY<span class="token number">5</span>OX<span class="token number">0.</span>eGrsrvwHm￾tPsO<span class="token number">9</span>r_pxHIQ<span class="token number">5</span>i<span class="token number">5</span>L<span class="token number">1</span>kX<span class="token number">9</span>RX<span class="token number">444</span>uwnRGaIM&quot;
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token property">&quot;rights&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">125</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;authName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;⽤户管理&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;icon&quot;</span><span class="token operator">:</span> <span class="token string">&quot;icon-user&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;children&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">110</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;authName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;⽤户列表&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;path&quot;</span><span class="token operator">:</span> <span class="token string">&quot;users&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rights&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;view&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;edit&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;add&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;delete&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">103</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;authName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;⻆⾊管理&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;icon&quot;</span><span class="token operator">:</span> <span class="token string">&quot;icon-tijikongjian&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;children&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">111</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;authName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;⻆⾊列表&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;path&quot;</span><span class="token operator">:</span> <span class="token string">&quot;roles&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rights&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;view&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;edit&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;add&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;delete&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">101</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;authName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;商品管理&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;icon&quot;</span><span class="token operator">:</span> <span class="token string">&quot;icon-shangpin&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;children&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">104</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;authName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;商品列表&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;path&quot;</span><span class="token operator">:</span> <span class="token string">&quot;goods&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rights&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;view&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;edit&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;add&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;delete&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">121</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;authName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;商品分类&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;path&quot;</span><span class="token operator">:</span> <span class="token string">&quot;categories&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;rights&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;view&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;edit&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;add&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;delete&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+ <span class="token property">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">&quot;msg&quot;</span><span class="token operator">:</span> <span class="token string">&quot;登录成功&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;status&quot;</span><span class="token operator">:</span> <span class="token number">200</span>
+  <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+</code></pre></div><ul><li>token:用于前端用户状态的保持</li> <li>rights:该用户具备的权限数据,⼀级权限就对应⼀级菜单,⼆级权限就对应⼆级菜单</li></ul> <p>根据rights中的数据动态渲染左侧菜单栏, 数据在Login.vue得到, 但是在Home.vue才使⽤, 所以可
+以把数据⽤vuex进⾏维护</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  state<span class="token operator">:</span> <span class="token punctuation">{</span>
+    rightList<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  mutations<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">setRightList</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      state<span class="token punctuation">.</span>rightList <span class="token operator">=</span> data
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  actions<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  getters<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>Login.vue</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>loginFormRef<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token parameter">valid</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span><span class="token operator">...</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'setRightList'</span><span class="token punctuation">,</span> res<span class="token punctuation">.</span>rights<span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">'登录成功'</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/home'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Home.vue</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> mapState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+ <span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'rightList'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>activePath <span class="token operator">=</span> window<span class="token punctuation">.</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'activePath'</span><span class="token punctuation">)</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>menulist <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>rightList
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p><code>刷新界⾯菜单消失</code><br>
+因为菜单数据是登录之后才获取到的, 获取菜单数据之后,就存放在Vuex中
+⼀旦刷新界⾯, Vuex中的数据会重新初始化, 所以会变成空的数组
+因此, 需要将权限数据存储在sessionStorage中, 并让其和Vuex中的数据保持同步</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ state<span class="token operator">:</span> <span class="token punctuation">{</span>
+  rightList<span class="token operator">:</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'rightList'</span><span class="token punctuation">)</span><span class="token operator">||</span><span class="token string">'[]'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ mutations<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token function">setRightList</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  state<span class="token punctuation">.</span>rightList <span class="token operator">=</span> data
+  sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'rightList'</span><span class="token punctuation">,</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>标识⽤户名, ⽅便查看当前⽤户</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ state<span class="token operator">:</span> <span class="token punctuation">{</span>
+ rightList<span class="token operator">:</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'rightList'</span><span class="token punctuation">)</span><span class="token operator">||</span><span class="token string">'[]'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+ username<span class="token operator">:</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ mutations<span class="token operator">:</span> <span class="token punctuation">{</span>
+ <span class="token function">setRightList</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ state<span class="token punctuation">.</span>rightList <span class="token operator">=</span> data
+ sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'rightList'</span><span class="token punctuation">,</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token function">setUsername</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ state<span class="token punctuation">.</span>username <span class="token operator">=</span> data
+ sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span>data<span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ actions<span class="token operator">:</span> <span class="token punctuation">{</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ getters<span class="token operator">:</span> <span class="token punctuation">{</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//Login.vue</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'setUsername'</span><span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>username<span class="token punctuation">)</span>
+
+<span class="token comment">//Home.vue</span>
+computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+ <span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'rightList'</span><span class="token punctuation">,</span><span class="token string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>el<span class="token operator">-</span>button type<span class="token operator">=</span><span class="token string">&quot;info&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;logout&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>username<span class="token punctuation">}</span><span class="token punctuation">}</span>退出<span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>button<span class="token operator">&gt;</span>
+</code></pre></div><p><code>退出按钮的逻辑</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">logout</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ sessionStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span>
+ window<span class="token punctuation">.</span>location<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><h3 id="界面的控制"><a href="#界面的控制" class="header-anchor">#</a> 界面的控制</h3> <p>如果用户没有登录，手动在地址栏输入管理界面的地址，则需要跳转到登录界面<br>
+如果用户已经登录，可是手动敲入非权限内的地址，则需要跳转404界面</p> <ol><li>正常的逻辑是通过登录界⾯, 登录成功之后跳转到管理平台界⾯, 但是如果⽤户直接敲⼊管理平台的地
+址, 也是可以跳过登录的步骤.所以应该在某个时机判断⽤户是否登录
+<code>sessionStorage.setItem('token', res.data.token)</code></li></ol> <div class="language-js extra-class"><pre class="language-js"><code>router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span><span class="token keyword">from</span><span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">'/login'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+ <span class="token keyword">const</span> token <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">)</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>token<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token function">next</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+ <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="2"><li>虽然菜单项已经被控制住了, 但是路由信息还是完整的存在于浏览器,正⽐如zhangsan这个⽤户并不具
+备⻆⾊这个菜单, 但是他如果⾃⼰在地址栏中敲⼊/roles的地址, 依然也可以访问⻆⾊界⾯<br>
+路由导航守卫固然可以在每次路由地址发⽣变化的时候, 从vuex中取出rightList判断⽤户将要访问
+的界⾯, 这个⽤户到底有没有权限.不过从另外⼀个⻆度来说,这个⽤户不具备权限的路由, 是否也应
+该压根就不存在呢<br> <code>动态路由</code></li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+<span class="token keyword">import</span> Login <span class="token keyword">from</span> <span class="token string">'@/components/Login.vue'</span>
+<span class="token keyword">import</span> Home <span class="token keyword">from</span> <span class="token string">'@/components/Home.vue'</span>
+<span class="token keyword">import</span> Welcome <span class="token keyword">from</span> <span class="token string">'@/components/Welcome.vue'</span>
+<span class="token keyword">import</span> Users <span class="token keyword">from</span> <span class="token string">'@/components/user/Users.vue'</span>
+<span class="token keyword">import</span> Roles <span class="token keyword">from</span> <span class="token string">'@/components/role/Roles.vue'</span>
+<span class="token keyword">import</span> GoodsCate <span class="token keyword">from</span> <span class="token string">'@/components/goods/GoodsCate.vue'</span>
+<span class="token keyword">import</span> GoodsList <span class="token keyword">from</span> <span class="token string">'@/components/goods/GoodsList.vue'</span>
+<span class="token keyword">import</span> NotFound <span class="token keyword">from</span> <span class="token string">'@/components/NotFound.vue'</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'@/store'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span>
+<span class="token keyword">const</span> userRule <span class="token operator">=</span> <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/users'</span><span class="token punctuation">,</span> component<span class="token operator">:</span> Users <span class="token punctuation">}</span>
+<span class="token keyword">const</span> roleRule <span class="token operator">=</span> <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/roles'</span><span class="token punctuation">,</span> component<span class="token operator">:</span> Roles <span class="token punctuation">}</span>
+<span class="token keyword">const</span> goodsRule <span class="token operator">=</span> <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/goods'</span><span class="token punctuation">,</span> component<span class="token operator">:</span> GoodsList <span class="token punctuation">}</span>
+<span class="token keyword">const</span> categoryRule <span class="token operator">=</span> <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/categories'</span><span class="token punctuation">,</span> component<span class="token operator">:</span> GoodsCate <span class="token punctuation">}</span>
+<span class="token keyword">const</span> ruleMapping <span class="token operator">=</span> <span class="token punctuation">{</span>
+ <span class="token string">'users'</span><span class="token operator">:</span> userRule<span class="token punctuation">,</span>
+ <span class="token string">'roles'</span><span class="token operator">:</span> roleRule<span class="token punctuation">,</span>
+ <span class="token string">'goods'</span><span class="token operator">:</span> goodsRule<span class="token punctuation">,</span>
+ <span class="token string">'categories'</span><span class="token operator">:</span> categoryRule
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ routes<span class="token operator">:</span> <span class="token punctuation">[</span>
+ <span class="token punctuation">{</span>
+ path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+ redirect<span class="token operator">:</span> <span class="token string">'/home'</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token punctuation">{</span>
+ path<span class="token operator">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span>
+ component<span class="token operator">:</span> Login
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token punctuation">{</span>
+ path<span class="token operator">:</span> <span class="token string">'/home'</span><span class="token punctuation">,</span>
+ component<span class="token operator">:</span> Home<span class="token punctuation">,</span>
+ redirect<span class="token operator">:</span> <span class="token string">'/welcome'</span><span class="token punctuation">,</span>
+ children<span class="token operator">:</span> <span class="token punctuation">[</span>
+ <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/welcome'</span><span class="token punctuation">,</span> component<span class="token operator">:</span> Welcome <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token comment">// { path: '/users', component: Users },</span>
+
+ <span class="token comment">// { path: '/roles', component: Roles },</span>
+ <span class="token comment">// { path: '/goods', component: GoodsList },</span>
+ <span class="token comment">// { path: '/categories', component: GoodsCate }</span>
+ <span class="token punctuation">]</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token punctuation">{</span>
+ path<span class="token operator">:</span> <span class="token string">'*'</span><span class="token punctuation">,</span>
+ component<span class="token operator">:</span> NotFound
+ <span class="token punctuation">}</span>
+ <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">'/login'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+ <span class="token keyword">const</span> token <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">)</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>token<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token function">next</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+ <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initDynamicRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">const</span> currentRoutes <span class="token operator">=</span> router<span class="token punctuation">.</span>options<span class="token punctuation">.</span>routes
+ <span class="token keyword">const</span> rightList <span class="token operator">=</span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>rightList
+ rightList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+ item<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+ currentRoutes<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>ruleMapping<span class="token punctuation">[</span>item<span class="token punctuation">.</span>path<span class="token punctuation">]</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+ router<span class="token punctuation">.</span><span class="token function">addRoutes</span><span class="token punctuation">(</span>currentRoutes<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> initDynamicRoutes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@/router.js'</span>
+<span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>loginFormRef<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token parameter">valid</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>valid<span class="token punctuation">)</span> <span class="token keyword">return</span>
+ <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token operator">:</span> res <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'login'</span><span class="token punctuation">,</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>loginForm<span class="token punctuation">)</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token keyword">return</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'登录失败！'</span><span class="token punctuation">)</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'setRightList'</span><span class="token punctuation">,</span> res<span class="token punctuation">.</span>rights<span class="token punctuation">)</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'setUsername'</span><span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>username<span class="token punctuation">)</span>
+ sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">,</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>token<span class="token punctuation">)</span>
+ <span class="token function">initDynamicRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">'登录成功'</span><span class="token punctuation">)</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/home'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//App.vue</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> initDynamicRoutes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@/router.js'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+ name<span class="token operator">:</span> <span class="token string">'app'</span><span class="token punctuation">,</span>
+ <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token function">initDynamicRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="按钮的控制"><a href="#按钮的控制" class="header-anchor">#</a> 按钮的控制</h3> <p>在某个菜单的界面中，还得根据巨献数据，展示出可进行操作的按钮，比如删除，修改，增加<br>
+虽然⽤户可以看到某些界⾯了, 但是这个界⾯的⼀些按钮,该⽤户可能是没有权限的.因此, 我们需要对组
+件中的⼀些按钮进⾏控制. ⽤户不具备权限的按钮就隐藏或者禁⽤, ⽽在这块中, 可以把该逻辑放到⾃定
+义指令中</p> <ul><li>路由规则中可以增加路由元数据meta</li> <li>通过路由对象可以得到当前的路由规则,以及存储在此规则中的meta数据</li> <li>⾃定义指令可以很⽅便的实现按钮控制</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//permission.js</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'@/router.js'</span>
+Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'permission'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+ <span class="token function-variable function">inserted</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">const</span> action <span class="token operator">=</span> binding<span class="token punctuation">.</span>value<span class="token punctuation">.</span>action
+ <span class="token keyword">const</span> currentRight <span class="token operator">=</span> router<span class="token punctuation">.</span>currentRoute<span class="token punctuation">.</span>meta
+ <span class="token keyword">if</span><span class="token punctuation">(</span>currentRight<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span>currentRight<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token comment">// 不具备权限</span>
+ <span class="token keyword">const</span> type <span class="token operator">=</span> binding<span class="token punctuation">.</span>value<span class="token punctuation">.</span>effect
+ <span class="token keyword">if</span><span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token string">'disabled'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ el<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span>
+ el<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'is-disabled'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+ el<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initDynamicRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">const</span> currentRoutes <span class="token operator">=</span> router<span class="token punctuation">.</span>options<span class="token punctuation">.</span>routes
+ <span class="token keyword">const</span> rightList <span class="token operator">=</span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>rightList
+ rightList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  item<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> itemRule <span class="token operator">=</span> ruleMapping<span class="token punctuation">[</span>item<span class="token punctuation">.</span>path<span class="token punctuation">]</span>
+  itemRule<span class="token punctuation">.</span>meta <span class="token operator">=</span> item<span class="token punctuation">.</span>rights
+  currentRoutes<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>itemRule<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+ router<span class="token punctuation">.</span><span class="token function">addRoutes</span><span class="token punctuation">(</span>currentRoutes<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>v<span class="token operator">-</span>permission<span class="token operator">=</span><span class="token string">&quot;{action:'add'}&quot;</span>
+v<span class="token operator">-</span>permission<span class="token operator">=</span><span class="token string">&quot;{action:'delete', effect:'disabled'}&quot;</span>
+</code></pre></div><h3 id="请求和响应的控制"><a href="#请求和响应的控制" class="header-anchor">#</a> 请求和响应的控制</h3> <p>如果用户通过非常规操作，比如通过浏览器调试工具将某些禁用的按钮变成启用转态，此时发的请求，也应该被前端所拦截</p> <ul><li>除了登录请求都得要带上token, 这样服务器才可以鉴别你的身份</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">req</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  constcurrentUrl<span class="token operator">=</span>req<span class="token punctuation">.</span><span class="token function">urlif</span><span class="token punctuation">(</span>currentUrl<span class="token operator">!==</span><span class="token string">'login'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    req<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>Authorization<span class="token operator">=</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">)</span> 
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> req 
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div><ul><li>如果发出了⾮权限内的请求, 应该直接在前端访问内阻止,虽然这个请求发到服务器也会被拒绝</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>importaxiosfrom<span class="token string">'axios'</span>
+importVuefrom<span class="token string">'vue'</span>
+importrouterfrom<span class="token string">'../router'</span><span class="token comment">// 配置请求的跟路径, ⽬前⽤mock模拟数据, 所以暂时把这⼀项注释起来// axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'</span>
+constactionMapping<span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token keyword">get</span><span class="token operator">:</span> <span class="token string">'view'</span><span class="token punctuation">,</span>post<span class="token operator">:</span> <span class="token string">'add'</span><span class="token punctuation">,</span>put<span class="token operator">:</span> <span class="token string">'edit'</span><span class="token punctuation">,</span><span class="token keyword">delete</span><span class="token operator">:</span> <span class="token string">'delete'</span><span class="token punctuation">}</span>
+axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">req</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  constcurrentUrl<span class="token operator">=</span>req<span class="token punctuation">.</span><span class="token function">urlif</span><span class="token punctuation">(</span>currentUrl<span class="token operator">!==</span><span class="token string">'login'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    req<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>Authorization<span class="token operator">=</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">)</span><span class="token comment">// 当前模块中具备的权限// 查看  get请求// 增加  post请求// 修改  put请求// 删除  delete请求</span>
+    <span class="token keyword">const</span> method<span class="token operator">=</span>req<span class="token punctuation">.</span>method<span class="token comment">// 根据请求, 得到是哪种操作</span>
+    <span class="token keyword">const</span> action<span class="token operator">=</span>actionMapping<span class="token punctuation">[</span>method<span class="token punctuation">]</span><span class="token comment">// 判断action是否存在当前路由的权限中</span>
+    <span class="token keyword">const</span> rights<span class="token operator">=</span>router<span class="token punctuation">.</span>currentRoute<span class="token punctuation">.</span>meta
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rights<span class="token operator">&amp;&amp;</span>rights<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span> <span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 没有权限alert('没有权限')</span>
+      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token function">newError</span><span class="token punctuation">(</span><span class="token string">'没有权限'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   
+   <span class="token punctuation">}</span>  <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> req
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> res<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$http<span class="token operator">=</span>axios
+</code></pre></div><p>得到了服务器返回的状态码401, 代表token超时或者被篡改了, 此时应该强制跳转到登录界⾯</p> <div class="language-js extra-class"><pre class="language-js"><code>axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>status<span class="token operator">===</span><span class="token number">401</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span>sessionStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">6/30/2020, 9:08:03 PM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><div class="valine-wrapper"><div id="valine"></div></div></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div></div></div>
+    <script src="/assets/js/app.d8b9440e.js" defer></script><script src="/assets/js/3.7525ef15.js" defer></script><script src="/assets/js/1.04d39d01.js" defer></script><script src="/assets/js/72.bbe31a51.js" defer></script>
+  </body>
+</html>
